@@ -1,0 +1,268 @@
+*{
+  box-sizing: border-box;
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --color: #fff;
+  --bgcol: #3C4CFF;
+}
+
+@keyframes pulse{
+  0%{
+    background: #fff;
+  }
+  50%{
+    background: #E7E7E7;
+  }
+  100%{
+    background: #fff
+  }
+}
+
+button{
+  border: none;
+  transition: .5s linear
+}
+
+button:focus, input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #71DFFF99
+}
+
+header{
+  display: flex;
+  background: var(--bgcol);
+  color: var(--color);
+  justify-content: space-between;
+  padding-top: 7px;
+  height: 50px
+}
+
+h1{
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-left: 7px
+}
+
+header .buttons{
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin-right: 10px;
+  margin-top: 5px;
+  transition: 0.25s linear
+}
+
+.buttons:hover{
+  box-shadow: 0 0px 0 4px #cccccc77;
+  background: #cccccc77;
+}
+
+.buttons div{
+  width: 4px;
+  height: 4px;
+  background: var(--color);
+  margin: auto;
+  border-radius: 50%
+}
+
+nav{
+  width: 200px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background: var(--color);
+  transform: translateY(-200px);
+  transition: all 0.5s ease;
+  opacity: 0;
+  box-shadow: 2px 2px 3px 4px #99999977;
+  max-height: 0;
+  z-index: 1
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav li{
+  margin: 0 auto 5px
+}
+
+nav button{
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: none;
+  background: transparent;
+  padding: 4px;
+  padding-left: 10px;
+}
+
+nav button:focus{
+  animation-name: pulse;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+}
+
+.modal-bg{
+  position: fixed;
+  background: #333333aa;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  padding-top: 200px;
+  z-index: 1
+}
+
+.modal{
+  background: #fff;
+  width: 75%;
+  margin: auto;
+  padding: 7px;
+  border-radius: 16px
+  
+}
+
+.modal input{
+  width: 100%;
+  display: block;
+  margin: 0 auto 16px;
+  padding: 6px;
+  height: 45px;
+  font-size: 1rem;
+  border: 1.5px solid var(--bgcol);
+  border-radius: 6px;
+  transition: .5s linear;
+  background: transparent;
+}
+
+.modal input[type=date]{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal #formbtn{
+  display: block;
+  margin: 12px auto;
+  width: 100%;
+  height: 50px;
+  text-transform: uppercase;
+  background: var(--bgcol);
+  color: var(--color);
+  font-size: 1rem;
+  border-radius: 26px;
+}
+
+.modal a{
+	text-decoration: none;
+	color: var(--color);
+}
+
+#loadcon{
+	display: flex;
+	justify-content: center;
+	display: none;
+	width: 20rem;
+	margin: auto;
+	background: #eee;
+	padding: 1rem;
+	border-radius: 1rem;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	top: 0;
+	height: 100vh;
+}
+
+.modal progress{
+	display: block;
+}
+
+#addcdown{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  font-weight: 285;
+  background: var(--bgcol);
+  color: var(--color);
+  border: none;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+}
+
+.count_down_list ul{
+  list-style: none;
+}
+
+.count_down_list li{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+  height: 50px;
+}
+
+.count_down_list .cd{
+  padding: 6px;
+  padding-left: 12px;
+  border-radius: 6px;
+  border: 1px solid;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  background: var(--bgcol);
+  color: var(--color);
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center; 
+}
+
+.count_down_list .opt_icon{
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  transform: rotateZ(90deg);
+  letter-spacing: 2px
+}
+
+.count_down_list .menu{
+  display: flex;
+  position: absolute;
+  width: 75px;
+  height: 40px;
+  right: 35px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px 0px #777;
+  max-height: 0;
+  overflow: hidden
+}
+
+@media (min-width: 600px) {
+	.modal-bg{
+		padding-top: 50px;
+	}
+}

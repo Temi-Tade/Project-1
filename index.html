@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body onload="loadData()">
+	<div id="loadcon" align="center">
+		<progress value="20" min="0" max="100"></progress>
+		<small>Loading</small>
+	</div>
+	
+  <div class="container">
+    
+    <header>
+      <h1>NXGn Count down timer <i class="fas fa-clock"></i></h1>
+      <div class="buttons">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
+    
+    <nav>
+      <ul>
+        <li><button id="abt">About</button></li>
+        <li><button id="privacy">Privacy Policy</button></li>
+        <li><button id="rate-app">Rate</button></li>
+        <li><button onclick="menuClose(menu)">Close Menu</button></li>
+      </ul>
+    </nav>
+    
+    <div class="modal-bg">
+      <div class="modal">
+        <div class="modal-head"></div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+    
+    <div class="main"><br>
+      <p style="text-align: center; font-style: italic; font-weight: bold">Current countdowns</p>
+      
+      <button type="button" id="addcdown">&plus;</button>
+      
+      <div class="count_down_list">
+        <ul></ul>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  </canvas>
+  
+  <script defer async src="./JavaScripts/main.js"></script>
+  <script defer async src="./JavaScripts/Load.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>COUNTDOWN</title>
+
+  <link rel="stylesheet" href="../stylesheets/timer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body onload="fetchData()">
+	
+  <header>
+    <h1></h1>
+  </header>
+
+ <div class="container">
+
+  <div class="info"></div>
+  
+  <table class="output">
+  	<tr>
+    	<td id="days"></td>
+    	<td id="hours"></td>
+    </tr>
+    
+    <tr>
+    	<td id="mins"></td>
+    	<td id="secs"></td>
+    </tr>
+  </table>
+  
+  <small class="message"></small>
+  
+  <canvas id="canvas" width="400" height="300">
+  
+  <div class="actions">
+    <button id="home" onclick="history.go(-1)"><i class="fas fa-home"></i><br>Back to Main menu</button>
+    <button id="clear"><i class="fas fa-trash"></i><br>Clear Timer</button>
+    <button id="edit"><i class="fas fa-edit"></i><br>Edit Timer</button >
+  </div>
+  
+ </div>
+ 
+  <div class="modal-bg">
+    <div class="modal">
+      <div class="modal-head"></div>
+      <div class="modal-body"></div>
+      <div class="modal-actions"></div>
+    </div>
+  </div>
+  
+  <script async defer src="../JavaScripts/script.js"></script>
+</body>
+</html>
