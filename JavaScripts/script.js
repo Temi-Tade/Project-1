@@ -7,7 +7,6 @@ var mod = document.querySelector('.modal')
 var modhd = document.querySelector('.modal-head')
 var modbod = document.querySelector('.modal-body')
 var modacts = document.querySelector('.modal-actions')
-let progress = document.querySelector('*')
 
 function fetchData() {
   var savedData = JSON.parse(sessionStorage.getItem('token'))
@@ -19,18 +18,14 @@ function fetchData() {
       let hours = Math.floor(dist % (1000 * 60 * 60 *24) / (1000 * 60 * 60))
       let mins = Math.floor(dist % (1000 * 60 * 60) / (1000 * 60))
       let secs = Math.floor(dist % (1000 * 60) / 1000)
-      document.querySelector('#days').innerHTML = days + ' DAYS'
-      document.querySelector('#hours').innerHTML = hours + ' HOURS'
-      document.querySelector('#mins').innerHTML = mins + ' MINUTES'
-      document.querySelector('#secs').innerHTML = secs + ' SECONDS'
+      document.querySelector('#days').innerHTML = days
+      document.querySelector('#hours').innerHTML = hours
+      document.querySelector('#mins').innerHTML = mins
+      document.querySelector('#secs').innerHTML = secs
       msg.innerHTML = 'Count down in progress...'
       checkTime(t)
-      let x = savedData.end - new Date(savedData.start).getTime()
-      let y = Date.now() - new Date(savedData.start).getTime()
       
-      let coeff = ((y/x) * 360)
-      console.log(coeff)
-    }, 1000) 
+    }, 1000)
     setInfo()
 }
 
@@ -43,8 +38,8 @@ function setInfo() {
     <li>The count down started ${new Date(savedData.start).toDateString()}</li>
     <li>The count down will end on ${new Date(savedData.end).toDateString()}</li>
   </ul>
-  <p style='text-align: center'>Time left till ${savedData.name}:</p>
   `
+  document.querySelector('caption').innerHTML = `Time left till ${savedData.name}`
 }
 
 document.querySelector('#clear').onclick = function() {
@@ -67,7 +62,7 @@ document.querySelector('#edit').onclick = function() {
   modbg.style.display = 'block'
   modhd.innerHTML = `<h3 style='text-align: center; margin: 0'>Edit timer</h3>`
   modbod.innerHTML = `
-  <form id='newinfo' align='center'>
+  <form id='newinfo' align='center' autocomplete='off'>
    <input type='text' id='newevent' placeholder='what is the new event' minlength='4' required>
    Select a new date
    <input type='date' id='newdate' required>
@@ -83,6 +78,7 @@ document.querySelector('#edit').onclick = function() {
     var confirm_user_action = confirm(`You are about to edit the current count down (${savedData.name}) \nThis action cannot be undone, do you wish to continue`)
     if (confirm_user_action === true) {
       _cds[i].name = document.querySelector('#newevent').value
+      _cds[i].start = new Date(Date.now()).toDateString()
       _cds[i].end = new Date(document.querySelector('#newdate').value).getTime()
       savedData.name = document.querySelector('#newevent').value
       savedData.end = new Date(document.querySelector('#newdate').value).getTime()
@@ -114,12 +110,3 @@ function checkTime(int) {
   }
   return false
 }
-
-let c = document.querySelector('canvas')
-let ctx = c.getContext('2d')
-
-ctx.beginPath()
-ctx.arc(50,50,25,0,2*Math.PI)
-ctx.fillStyle = 'green'
-ctx.closePath()
-ctx.

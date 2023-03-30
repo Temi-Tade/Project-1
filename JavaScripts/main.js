@@ -40,7 +40,7 @@ function menuClose(x){
 document.querySelector('#addcdown').addEventListener('click',function(){
   createModal(`
   <h3 style='text-align: center; margin: 7px 0px'>Add New Count down</h3>`,
-  `<form id='create_cd_form' align='center'>
+  `<form id='create_cd_form' align='center' autocomplete='off'>
     <input type='text' id='cdname' placeholder='Enter countdown name' minlength='4' maxlength='16' required autocomplete='off'>
     
     <label for='date' style='text-align: left; width: 100%; display: block'>Select date:</label>
