@@ -7,7 +7,6 @@
 
   <title>COUNTDOWN</title>
 
-  <link rel="manifest" href="/manifest.json" type="application/json">
   <link rel="stylesheet" href="../stylesheets/timer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -26,17 +25,17 @@
   <table class="output" width="100%">
   	<caption></caption>
   	<tr>
-    	<th id="days">Loading data...</th>
-    	<th id="hours">Loading data...</th>
-    	<th id="mins">Loading data...</th>
-    	<th id="secs">Loading data...</th>
+    	<th class="desc" id="days">Loading data...</th>
+    	<th class="desc" id="hours">Loading data...</th>
+    	<th class="desc" id="mins">Loading data...</th>
+    	<th class="desc" id="secs">Loading data...</th>
     </tr>
     
     <tr id="vals">
-    	<td>Days</td>
-    	<td>Hours</td>
-    	<td>Minutes</td>
-    	<td>Seconds</td>
+    	<td class="unit">Day(s)</td>
+    	<td class="unit">Hour(s)</td>
+    	<td class="unit">Minute(s)</td>
+    	<td class="unit">Second(s)</td>
     </tr>
   </table>
   
@@ -44,8 +43,8 @@
   
   <div class="actions">
   	<button id="home" onclick="history.go(-1)"><i class="fas fa-home"></i><br>Back to Home</button>
-    <button id="clear"><i class="fas fa-trash"></i><br>Clear Timer</button>
-    <button id="edit"><i class="fas fa-edit"></i><br>Edit Timer</button >
+    <button id="clear"><i class="fas fa-trash"></i><br>Clear Countdown</button>
+    <button id="edit"><i class="fas fa-edit"></i><br>Edit Countdown</button >
   </div>
   
  </div>

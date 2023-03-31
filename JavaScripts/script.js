@@ -17,7 +17,7 @@ function fetchData() {
       let days = Math.floor(dist / (1000 * 60 * 60 * 24))
       let hours = Math.floor(dist % (1000 * 60 * 60 *24) / (1000 * 60 * 60))
       let mins = Math.floor(dist % (1000 * 60 * 60) / (1000 * 60))
-      let secs = Math.floor(dist % (1000 * 60) / 1000)
+      let secs = Math.floor (dist % (1000 * 60) / 1000)
       document.querySelector('#days').innerHTML = days
       document.querySelector('#hours').innerHTML = hours
       document.querySelector('#mins').innerHTML = mins
@@ -81,6 +81,7 @@ document.querySelector('#edit').onclick = function() {
       _cds[i].start = new Date(Date.now()).toDateString()
       _cds[i].end = new Date(document.querySelector('#newdate').value).getTime()
       savedData.name = document.querySelector('#newevent').value
+      savedData.start = new Date(Date.now()).toDateString()
       savedData.end = new Date(document.querySelector('#newdate').value).getTime()
       sessionStorage.setItem('token',JSON.stringify(savedData))
       localStorage.setItem('count_downs', JSON.stringify(_cds))
@@ -104,7 +105,7 @@ function checkTime(int) {
     msg.innerHTML = 'Countdown expired!'
     modbg.style.display = 'block'
     modbod.innerHTML = 'Countdown expired!'
-    modhd.innerHTML = '<h3>Alert!</h3>'
+    modhd.innerHTML = '<h3>Info</h3>'
     output.innerHTML = '<p style="color: black; text-align: center">Countdown has expired! You can create a new countdown by clicking the Edit timer button below</p>'
     output.style.display ='block'
   }
