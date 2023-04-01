@@ -34,9 +34,9 @@ function setInfo() {
   document.querySelector('h1').innerHTML = `Countdown to ${savedData.name}`
   document.querySelector('.info').innerHTML = `
   <h2 style='text-align: center'>Count down info</h2> 
-  <ul>
+  <ul>	
     <li>The count down started ${new Date(savedData.start).toDateString()}</li>
-    <li>The count down will end on ${new Date(savedData.end).toDateString()}</li>
+    <li>The count down will end on ${new Date(savedData.end).toDateString()}
   </ul>
   `
   document.querySelector('caption').innerHTML = `Time left till ${savedData.name}`
