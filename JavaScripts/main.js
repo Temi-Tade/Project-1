@@ -1,4 +1,4 @@
-var menubtn = document.querySelector('.buttons')
+var menubtn = document.querySelector('.ham')
 var menu = document.querySelector('nav')
 var modbg = document.querySelector('.modal-bg')
 var mod = document.querySelector('.modal')
