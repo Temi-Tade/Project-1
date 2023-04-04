@@ -3,10 +3,11 @@
   line-height: 1.7;
   padding: 0;
   margin: 0;
+  letter-spacing: .75px
 }
 
 :root{
-  --color: #fff;
+  --color: #eee;
   --bgcol: #3C4CFF;
 }
 
@@ -51,7 +52,7 @@ h1{
   padding-left: 7px
 }
 
-header .ham{
+header #ham{
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -60,14 +61,15 @@ header .ham{
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent;
 }
 
-.ham:hover{
+#ham:hover{
   box-shadow: 0 0px 0 4px #cccccc77;
   background: #cccccc77;
 }
 
-.ham i{
+#ham i{
 	width: 100%;
 	height: 100%;
   display: flex;
@@ -76,20 +78,22 @@ header .ham{
   margin: auto;
   border-radius: 50%;
   font-size: 1.2rem;
+  color: var(--color);
 }
 
 nav{
-  width: 200px;
+  width: 220px;
   position: absolute;
   right: 2px;
   top: 2px;
   background: var(--color);
-  transform: translateY(-200px);
+  transform: translateY(-200px) scale(0,0);
   transition: all 0.5s ease;
   opacity: 0;
   box-shadow: 2px 2px 3px 4px #99999977;
   max-height: 0;
-  z-index: 1
+  padding: .5rem;
+  z-index: 5
 }
 
 nav ul{
@@ -130,8 +134,12 @@ nav button:focus{
   z-index: 1
 }
 
+.modal h3{
+	text-align: center;
+}
+
 .modal{
-  background: #fff;
+  background: var(--color);
   width: 75%;
   margin: auto;
   padding: 1rem;
@@ -172,7 +180,7 @@ nav button:focus{
 
 .modal a{
 	text-decoration: none;
-	color: var(--color);
+	color: var(--bgcol);
 }
 
 #loadcon{

@@ -1,4 +1,4 @@
-var menubtn = document.querySelector('.ham')
+var menubtn = document.querySelector('#ham')
 var menu = document.querySelector('nav')
 var modbg = document.querySelector('.modal-bg')
 var mod = document.querySelector('.modal')
@@ -29,12 +29,14 @@ menubtn.addEventListener('click',function(){
   menu.style.transform = 'translateY(0)'
   menu.style.opacity = '1'
   menu.style.maxHeight = '500px'
+  menu.style.transform = 'scale(1,1)'
 })
 
 function menuClose(x){
   x.style.transform = 'translateY(-200px)'
   x.style.opacity = '0'
   x.style.maxHeight = '0'
+  x.style.transform = 'scale(0,0)'
 }
 
 document.querySelector('#addcdown').addEventListener('click',function(){
@@ -116,7 +118,7 @@ document.querySelector('#abt').onclick = function(){
       <h3 style='text-align: center'>About</h3>`,
       `<p>NXGn Countdown timer is a web-based countdown timer used to keep track of events</p>
       <p>Developer Credit: Temiloluwa Akintade</p>
-      <p>Developer Contact: <a href='mailto: codinglabz20@gmail.com' style='color: rgba(156,75,224)'>codinglabz20@gmail.com</a></p>
+      <p>Developer Contact: <a href='mailto: codinglabz20@gmail.com' style='color: #3C4CFF'>codinglabz20@gmail.com</a></p>
       <small style='display: block;text-align: center'>All rights reserved &copy; 2022</small>
     `)
 } 
@@ -154,6 +156,27 @@ document.querySelector('#rate-app').onclick = function() {
     sendbtn.style.background = '#777'
 }
 
+menu.querySelector('#contact').addEventListener('click', () => {
+	menuClose(menu)
+	createModal('<h3>Developer Contact</h3>', `
+	<ul style='font-size: 4rem; display: flex; justify-content: space-between' type='none'>
+	<li><a style='text-decoration: none; color: red;' href='mailto: codinglabz20@gmail.com'><i class='fas fa-envelope'></i></a></li>
+	<li><a style='text-decoration: none; color: black;' href='https://github.com/Temi-Tade'><i class='fab fa-github'></i></a></li>
+	<li><a style='text-decoration: none; color: blue;' href='https://www.facebook.com/temiloluwa.akintade.10'><i class='fab fa-facebook'></i></a></li>
+	<li><a style='text-decoration: none; color: skyblue;' href='https://twitter.com/Temi_tade2805?t=lfJM50RhBTrrrSb4hHfVgQ&s=09'><i class='fab fa-twitter'></i></a></li>
+	</ul>
+	`)
+})
+
+menu.querySelector('#other').addEventListener('click', () => {
+	menuClose(menu)
+	createModal('<h3>Other Products by the developer</h3>', 
+	`<ul type='none'>
+	<li><a href='https://temi-tade.github.io/love_calculator'>Love tester</a></li>
+	</ul>`
+	)
+})
+
 function like() {
   var likes = document.querySelector('#likes')
   var sendbtn = document.querySelector('#sendbtn')
@@ -182,8 +205,12 @@ function dislike() {
 }
 
 function send(){
-  createModal(`<h3>Ratings sent!</h3>`,
+  createModal(`<h3 class='fas fa-check' style='text-align: center'></h3>`,
   `<p>Your ratings have been sent! Thanks for the feedback!</p>`
   )
 }
 
+/*
+Svg when loading
+
+*/
