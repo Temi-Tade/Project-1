@@ -10,7 +10,7 @@ var list = document.querySelector('.count_down_list').querySelector('ul')
 document.onreadystatechange = () =>{
 	if (document.readyState !== 'complete') {
 		document.body.style.visibility = 'hidden'
-		
+			
 	} else {
 		document.body.style.visibility = 'visible'
 	}
@@ -144,7 +144,7 @@ document.querySelector('#rate-app').onclick = function() {
   modbg.style.fontWeight = '300'
   createModal(`
     <h3 style='text-align: center'>Rate App</h3>`,
-   `<p>Tell the developers waht you think about the app. Your ratings mean a lot to them!</p>
+   `<p>Tell the developers what you think about the app. Your ratings mean a lot to them!</p>
     <div id='likes' style='width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2.5rem; letter-spacing: 1.2px'></div>
     <div style='display: flex; justify-content: space-between; margin-top: 10px'>
       <button style='background: red; display: inline-block; width: 50px; height: 50px; font-size: 2rem' onclick='dislike()'>👎</button>

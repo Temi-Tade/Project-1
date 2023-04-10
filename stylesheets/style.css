@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   letter-spacing: .75px;
+  font-family: sans-serif
 }
 
 :root{
@@ -221,13 +222,29 @@ nav button:focus{
   justify-content: center;
   align-items: center;
   line-height: 0;
-  font-weight: 285;
   background: var(--bgcol);
   color: var(--color);
   border: none;
   position: fixed;
   bottom: 40px;
   right: 30px;
+}
+
+#refreshbtn{
+	font-size: 1.2rem; 
+	background: var(--bgcol); 
+	color: var(--color); 
+	padding: .5rem; 
+	display: flex; 
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: none;
+	position: fixed;
+	  bottom: 120px;
+	  right: 30px;
+	  justify-content: center;
+	  align-items: center;
 }
 
 .count_down_list ul{
