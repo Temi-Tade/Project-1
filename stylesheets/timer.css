@@ -1,14 +1,16 @@
-*{
-  box-sizing: border-box;
-  line-height: 1.75;
-  margin: 0;
-  padding: 0;
-  transition: 1s
-}
-
 :root{
   --color: #fff;
   --bgcol: #3C4CFF;
+  --font: Ubuntu, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	line-height: 1.7;
+	padding: 0;
+	margin: 0;
+	letter-spacing: .75px;
+	font-family: var(--font);
 }
 
 html{

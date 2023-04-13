@@ -1,15 +1,16 @@
-*{
-  box-sizing: border-box;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  letter-spacing: .75px;
-  font-family: sans-serif
-}
-
 :root{
   --color: #eee;
   --bgcol: #3C4CFF;
+  --font: Ubuntu, sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+	line-height: 1.7;
+	padding: 0;
+	margin: 0;
+	letter-spacing: .75px;
+	font-family: var(--font);
 }
 
 @keyframes pulse{
