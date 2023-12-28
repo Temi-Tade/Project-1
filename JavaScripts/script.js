@@ -50,6 +50,7 @@ document.querySelector('#clear').onclick = function() {
     cds.splice(cds.indexOf(cds[i]),1)
     localStorage.setItem('count_downs',JSON.stringify(cds))
     history.go(-1)
+    history.go(0)
   } else {
     return false
   }
