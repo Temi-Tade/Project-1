@@ -74,7 +74,9 @@ function createModal(head,body){
 
 function loadData(){
   if (localStorage.getItem('count_downs') === null) {//
-    return false
+    list.innerHTML = `
+    	<p>You have no countdowns, click on the &plus; button bellow to add a new countdown.</p>
+    `
   } else {
     var _cds = JSON.parse(localStorage.getItem('count_downs'))
     for (var i = 0; i < _cds.length; i++) { 
@@ -164,6 +166,7 @@ menu.querySelector('#contact').addEventListener('click', () => {
 	<li><a style='text-decoration: none; color: black;' href='https://github.com/Temi-Tade'><i class='fab fa-github'></i></a></li>
 	<li><a style='text-decoration: none; color: blue;' href='https://www.facebook.com/temiloluwa.akintade.10'><i class='fab fa-facebook'></i></a></li>
 	<li><a style='text-decoration: none; color: skyblue;' href='https://twitter.com/Temi_tade2805?t=lfJM50RhBTrrrSb4hHfVgQ&s=09'><i class='fab fa-twitter'></i></a></li>
+	<li><a style='text-decoration: none; color: darkblue;' href='https://www.linkedin.com/in/temiloluwa-akintade-4b6798254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'><i class='fab fa-linkedin'></i></a></li>
 	</ul>
 	`)
 })
@@ -210,7 +213,3 @@ function send(){
   )
 }
 
-/*
-Svg when loading
-
-*/
