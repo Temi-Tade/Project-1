@@ -73,17 +73,17 @@ function createModal(head,body){
 }
 
 function loadData(){
-  if (localStorage.getItem('count_downs') === null) {//
+  if (JSON.parse(localStorage.getItem('count_downs')).length === 0) {
     list.innerHTML = `
-    	<p>You have no countdowns, click on the &plus; button bellow to add a new countdown.</p>
+    	<p id="no-cds"><i id='no-cds-logo' class='fa-solid fa-list-check'></i><br>You have no countdowns, click on the &plus; button bellow to add a new countdown.</p>
     `
   } else {
     var _cds = JSON.parse(localStorage.getItem('count_downs'))
-    for (var i = 0; i < _cds.length; i++) { 
+    _cds.forEach((val, ind) => {
       list.innerHTML += `
-      <li onclick='sessionStorage.setItem("i",${i})'><a href='./timer/timer.html' class='cd' onclick='sessionStorage.setItem("token",JSON.stringify(JSON.parse(localStorage.getItem("count_downs"))[${i}]))'>${_cds[i].name}</a></li>
+      <li onclick='sessionStorage.setItem("i",${ind})'><a href='./timer/timer.html' class='cd' onclick='sessionStorage.setItem("token",JSON.stringify(JSON.parse(localStorage.getItem("count_downs"))[${ind}]))'>${val.name}</a></li>
       `
-    }
+    });
   }
 }
 
@@ -212,4 +212,3 @@ function send(){
   `<p>Your ratings have been sent! Thanks for the feedback!</p>`
   )
 }
-

@@ -46,11 +46,10 @@ document.querySelector('#clear').onclick = function() {
   let cds = JSON.parse(localStorage.getItem('count_downs'))
   let i = JSON.parse(sessionStorage.getItem('i'))
   var confirm_user_action = confirm(`You are about to clear the current count down (${cds[i].name})\nThis action cannot be undone, do you wish to continue`)
-  if (confirm_user_action === true) {
+  if (confirm_user_action) {
     cds.splice(cds.indexOf(cds[i]),1)
     localStorage.setItem('count_downs',JSON.stringify(cds))
     history.go(-1)
-    history.go(0)
   } else {
     return false
   }
@@ -70,12 +69,12 @@ document.querySelector('#edit').onclick = function() {
    <button type='submit'>Save Changes</button>
   </form>
   `
-  document.querySelector('#newinfo').addEventListener('submit', function() {
+  document.querySelector('#newinfo').addEventListener('submit', (e) => {
     if (new Date(document.querySelector('#newdate').value).getTime() - Date.now() < 0) {
       alert('Invalid date!')
       return false
     }
-    event.preventDefault()
+    e.preventDefault()
     var confirm_user_action = confirm(`You are about to edit the current count down (${savedData.name}) \nThis action cannot be undone, do you wish to continue`)
     if (confirm_user_action === true) {
       _cds[i].name = document.querySelector('#newevent').value

@@ -221,6 +221,17 @@ nav button:focus{
 	display: block;
 }
 
+#no-cds{
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+#no-cds-logo{
+  font-size: 4rem;
+  color: var(--bgcol);
+}
+
 #addcdown{
   width: 60px;
   height: 60px;
@@ -236,23 +247,6 @@ nav button:focus{
   position: fixed;
   bottom: 40px;
   right: 30px;
-}
-
-#refreshbtn{
-	font-size: 1.2rem; 
-	background: var(--bgcol); 
-	color: var(--color); 
-	padding: .5rem; 
-	display: flex; 
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
-	position: fixed;
-	  bottom: 120px;
-	  right: 30px;
-	  justify-content: center;
-	  align-items: center;
 }
 
 #count_down_list ul{
@@ -288,6 +282,4 @@ nav button:focus{
 		padding-top: 50px;
 		position: fixed;
 	}
-
-  
 }
