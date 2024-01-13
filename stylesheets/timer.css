@@ -59,7 +59,7 @@ input:focus{
   box-shadow: 0 0 0 4px #71DFFF99
 }
 
-.modal input{
+#modal input{
   width: 100%;
   display: block;
   margin: 0 auto 16px;
@@ -72,7 +72,7 @@ input:focus{
   background: transparent;
 }
 
-.modal input[type=date]{
+#modal input[type=date]{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -87,7 +87,7 @@ label{
   display: none;
 }
 
-.output{
+#output{
   width: 100%;
   margin: 1rem auto;
   transition: .5s;
@@ -97,22 +97,10 @@ label{
   font-style: italic;
 }
 
-.message{
+#message{
   text-align: center;
   display: block;
   padding: 6px 0;
-}
-
-.error{
-  background-color: #FF0C0C;
-  color: #fff;
-  width: 100%;
-}
-
-.success{
-  background-color: #008B2B;
-  color: #fff;
-  width: 100%
 }
 
 ul{
@@ -160,7 +148,7 @@ td{
 #vals{
 	font-weight: lighter;
 }
-.actions{
+#actions{
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -171,7 +159,7 @@ td{
   box-shadow: 2px 0 2px 2px #ccc;
 }
 
-.actions button{
+#actions button{
   border: none;
   width: 100%; 
   color: #333;
@@ -183,12 +171,12 @@ td{
   transition: .25s
 }
 
-.actions button:focus{
+#actions button:focus{
 	background: var(--bgcol);
 	color: #fff;
 }
 
-.modal-bg{
+#modal-bg{
   position: absolute;
   background: #333333aa;
   top: 0;
@@ -200,7 +188,7 @@ td{
   z-index: 1;
 }
 
-.modal{
+#modal{
   background: #fff;
   width: 75%;
   margin: auto;
@@ -208,13 +196,13 @@ td{
   border-radius: 16px;
 }
 
-.modal-actions{
+#modal-actions{
   margin-top: 16px;
   display: flex;
   justify-content: space-between
 }
 
-.modal button{
+#modal button{
   border: none;
   width: 100%;
   font-size: 1rem;
@@ -245,52 +233,20 @@ td{
 
 /*media queries*/
 
-@media screen and (min-width: 600px) {
-  .container{
+@media screen and (min-width: 625px) {
+  #info ul{
     display: flex;
-    justify-content: center
+    justify-content: space-around;
+    margin: 1rem auto;
   }
-  
-  .info{
-  	width: 50rem;
+
+  #output{
+    width: 90%;
+    height: 5rem;
+    margin: 5rem auto;
   }
-  
-  .output{
-    margin: auto;
-  }
-  
-  .message{
-    display: none
-  }
-  
-  .actions{
-  	position: static;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 0 0;
-    background: transparent;
-    justify-items: center;
-    align-items: center;
-    width: 20rem;
-    padding: 0
-  }
-  
-  .actions button{
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .modal-bg{
-  	padding-top: 50px;
-  	position: fixed
-  }
-  
-  .modal{
-  	width: 65%;
-  }
-  
-  ul li{
-  	text-align: center;
+
+  th{
+    font-size: 5rem;
   }
 }

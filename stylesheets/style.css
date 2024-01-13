@@ -27,11 +27,13 @@
 
 html{
 	background: #EEE;
+  accent-color: var(--bgcol);
 }
 
 button{
   border: none;
-  transition: .5s linear
+  transition: .5s linear;
+  cursor: pointer;
 }
 
 button:focus, input:focus {
@@ -130,7 +132,7 @@ nav button:focus{
   animation-iteration-count: 1;
 }
 
-.modal-bg{
+#modal-bg{
   position: fixed;
   background: #333333aa;
   top: 0;
@@ -142,11 +144,11 @@ nav button:focus{
   z-index: 1
 }
 
-.modal h3{
+#modal h3{
 	text-align: center;
 }
 
-.modal{
+#modal{
   background: var(--color);
   width: 75%;
   margin: auto;
@@ -155,7 +157,7 @@ nav button:focus{
   
 }
 
-.modal input{
+#modal input{
   width: 100%;
   display: block;
   margin: 0 auto 16px;
@@ -168,13 +170,13 @@ nav button:focus{
   background: transparent;
 }
 
-.modal input[type=date]{
+#modal input[type=date]{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.modal #formbtn{
+#modal #formbtn{
   display: block;
   margin: 12px auto;
   width: 100%;
@@ -186,7 +188,7 @@ nav button:focus{
   border-radius: 26px;
 }
 
-.modal a{
+#modal a{
 	text-decoration: none;
 	color: var(--bgcol);
 }
@@ -210,7 +212,12 @@ nav button:focus{
 	height: 100vh;
 }
 
-.modal progress{
+#logo{
+  font-size: 2rem;
+  color: var(--bgcol);
+}
+
+#modal progress{
 	display: block;
 }
 
@@ -219,7 +226,7 @@ nav button:focus{
   height: 60px;
   border-radius: 50%;
   display: flex;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   justify-content: center;
   align-items: center;
   line-height: 0;
@@ -248,11 +255,11 @@ nav button:focus{
 	  align-items: center;
 }
 
-.count_down_list ul{
+#count_down_list ul{
   list-style: none;
 }
 
-.count_down_list li{
+#count_down_list li{
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -260,7 +267,7 @@ nav button:focus{
   height: 50px;
 }
 
-.count_down_list .cd{
+#count_down_list .cd{
   padding: 6px;
   padding-left: 12px;
   border-radius: 6px;
@@ -276,33 +283,11 @@ nav button:focus{
   align-items: center; 
 }
 
-.count_down_list .opt_icon{
-  position: absolute;
-  right: 15px;
-  top: 12px;
-  transform: rotateZ(90deg);
-  letter-spacing: 2px
-}
-
-.count_down_list .menu{
-  display: flex;
-  position: absolute;
-  width: 75px;
-  height: 40px;
-  right: 35px;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 7px;
-  box-shadow: 1px 1px 4px 0px #777;
-  max-height: 0;
-  overflow: hidden
-}
-
 @media (min-width: 600px) {
-	.modal-bg{
+	#modal-bg{
 		padding-top: 50px;
 		position: fixed;
 	}
+
+  
 }

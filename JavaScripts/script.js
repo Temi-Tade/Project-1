@@ -1,16 +1,16 @@
 let today = new Date()
-let output = document.querySelector('.output')
-let msg = document.querySelector('.message')
+let output = document.querySelector('#output')
+let msg = document.querySelector('#message')
 let text = ''
-var modbg = document.querySelector('.modal-bg')
-var mod = document.querySelector('.modal')
-var modhd = document.querySelector('.modal-head')
-var modbod = document.querySelector('.modal-body')
-var modacts = document.querySelector('.modal-actions')
+var modbg = document.querySelector('#modal-bg')
+var mod = document.querySelector('#modal')
+var modhd = document.querySelector('#modal-head')
+var modbod = document.querySelector('#modal-body')
+var modacts = document.querySelector('#modal-actions')
 
 function fetchData() {
   var savedData = JSON.parse(sessionStorage.getItem('token'))
-    document.querySelector('.actions').style.display = 'flex'
+    document.querySelector('#actions').style.display = 'flex'
     let t = setInterval(function() {
       let now = new Date().getTime()
       let dist = savedData.end - now
@@ -22,7 +22,7 @@ function fetchData() {
       document.querySelector('#hours').innerHTML = hours
       document.querySelector('#mins').innerHTML = mins
       document.querySelector('#secs').innerHTML = secs
-      msg.innerHTML = 'Count down in progress...'
+
       checkTime(t)
       
     }, 1000)
@@ -32,7 +32,7 @@ function fetchData() {
 function setInfo() {
   let savedData = JSON.parse(sessionStorage.getItem('token'))
   document.querySelector('h1').innerHTML = `Countdown to ${savedData.name}`
-  document.querySelector('.info').innerHTML = `
+  document.querySelector('#info').innerHTML = `
   <h2 style='text-align: center'>Count down info</h2> 
   <ul>	
     <li>The count down started ${new Date(savedData.start).toDateString()}</li>
@@ -112,3 +112,6 @@ function checkTime(int) {
   }
   return false
 }
+
+//input validation
+//deletion bug

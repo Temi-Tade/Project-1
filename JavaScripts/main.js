@@ -1,11 +1,11 @@
 var menubtn = document.querySelector('#ham')
 var menu = document.querySelector('nav')
-var modbg = document.querySelector('.modal-bg')
-var mod = document.querySelector('.modal')
-var modhd = document.querySelector('.modal-head')
-var modbod = document.querySelector('.modal-body')
+var modbg = document.querySelector('#modal-bg')
+var mod = document.querySelector('#modal')
+var modhd = document.querySelector('#modal-head')
+var modbod = document.querySelector('#modal-body')
 var datetime = new Date(Date.now()).toDateString()
-var list = document.querySelector('.count_down_list').querySelector('ul')
+var list = document.querySelector('#count_down_list').querySelector('ul')
 
 document.onreadystatechange = () =>{
 	if (document.readyState !== 'complete') {
